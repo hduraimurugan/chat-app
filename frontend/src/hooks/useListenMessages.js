@@ -12,7 +12,6 @@ const useListenMessages = () => {
 	useEffect(() => {
 		socket?.on("newMessage", (newMessage) => {
 			newMessage.shouldShake = true;
-			console.log("Message: ", newMessage);
 			const sound = new Audio(notificationSound);
 			sound.play();
 			// add the newMessage to the messages array only if it is sent by the selectedConversation user id

@@ -9,14 +9,12 @@ const MobileMessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
 
   // Log the selected conversation for debugging
-  console.log("Selected conversation from Mobile: ", selectedConversation);
 
   // useEffect to handle loading the persisted conversation on mount
   useEffect(() => {
     const storedConversation = localStorage.getItem('conversation-storage'); // Access persisted conversation
     if (storedConversation) {
       const parsedConversation = JSON.parse(storedConversation)
-	  console.log("Parsed conversation from Mobile: ", parsedConversation);
       if (parsedConversation) {
         setSelectedConversation(parsedConversation); // Restore conversation from localStorage
       }
